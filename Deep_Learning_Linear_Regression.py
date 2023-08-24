@@ -1,4 +1,8 @@
+"""
+In this module Tensorflow is used to perform linear regression on a set of randomly generated data points 
+and find the line of best-fit through them.
 
+"""
 import matplotlib.pyplot as plt
 import math
 import random
@@ -6,6 +10,7 @@ import tensorflow as tf
 import numpy as np
 
 # We're trying to map our model to the equation y = mx + c + random noise
+#Display a scatter graph of randomly generated data points
 num_steps = 30
 x_set = np.arange(num_steps, dtype="float")
 m = random.uniform(1,5)
@@ -31,7 +36,8 @@ model.fit(x_set, y_set, epochs=30)
 prediction = model.predict(x_set).flatten()
 plt.xlabel("x")
 plt.ylabel("y")
- 
+
+#Display the line of best-fit 
 # Our initial dataset
 plt.scatter(x_set, y_set)
 # Model prediction
